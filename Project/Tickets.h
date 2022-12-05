@@ -7,11 +7,11 @@ enum SpectatorType { CHILD, TEENAGER, STUDENT, ADULT, SENIOR};
 class Ticket {
 private:
 	bool VIP = false;
-	int noRow;
-	int noSeat;
-	SpectatorType type;
-	int* tickets;
-	int noTickets;
+	int noRow = 0;
+	int noSeat = 0;
+	SpectatorType type = ADULT;
+	int* tickets = nullptr;
+	int noTickets = 0;
 	static int MINIMUM_TICKETS_NUMBER;
 	const int uniqueId;
 public:
