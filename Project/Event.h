@@ -6,9 +6,9 @@ class Event
 private:
 	char* eventName = nullptr;
 	//date
-	int eventDay = 01;
+	int eventDay = 1;
 	string eventMonth = "January";
-	int eventYear = 1999;
+	int eventYear = 2001;
 	//time
 	int eventHour = 00;
 	int eventMinute = 00;
