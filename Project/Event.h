@@ -107,10 +107,10 @@ public:
 	{
 		if (day < 1 && day > 30)
 		{
-			this->eventDay = day;
+			cout << endl << "Cannot change the day. Input should be only from 1 to 30.";
 		}
 		else
-			cout << endl << "Cannot change the day. Input should be only from 1 to 30.";
+			this->eventDay = day;
 	}
 	void setEventMonth(string month)
 	{
@@ -125,28 +125,29 @@ public:
 	{
 		if (year < 2022 && year > 2025)
 		{
+			cout << endl << "Cannot change the year. Input should be only from 2022 to 2025.";
 			this->eventYear = year;
 		}
 		else
-			cout << endl << "Cannot change the year. Input should be only from 2022 to 2025.";
+			this->eventYear = year;
 	}
 	void setEventHour(int hour)
 	{
 		if (hour < 0 && hour > 24)
 		{
-			this->eventHour = hour;
+			cout << endl << "Cannot change the hour. Input should be only from 0 to 24.";
 		}
 		else
-			cout << endl << "Cannot change the hour. Input should be only from 0 to 24.";
+			this->eventHour = hour;
 	}
 	void setEventMinute(int minute)
 	{
 		if (minute < 0 && minute > 60) 
 		{
-			this->eventMinute = minute;
+			cout << endl << "Cannot change the minutes. Input should be only from 0 to 60.";
 		}
 		else
-			cout << endl << "Cannot change the minutes. Input should be only from 0 to 60.";
+			this->eventMinute = minute;
 	}
 	void setEventCity(string city)
 	{
@@ -160,10 +161,10 @@ public:
 	{
 		if (no < 0 && no > 50)
 		{
-			this->noStreet = no;
+			cout << endl << "Cannot change the street number. Input should be only from 1 to 50.";
 		}
 		else
-			cout << endl << "Cannot change the street number. Input should be only from 1 to 50.";
+			this->noStreet = no;
 	}
 
 	char* getEventName()
@@ -222,29 +223,29 @@ void operator<<(ostream& out, Event e)
 
 void operator>>(istream& in, Event& e) 
 {
-	//cout << endl << "Event name: ";
-	//char buffer[100];
-	//in >> buffer;
-	//if (e.eventName != nullptr) {
-	//	delete[] e.eventName;
-	//	e.eventName = nullptr;
-	//}
-	//e.eventName = new char[strlen(buffer) + 1];
-	//strcpy_s(e.eventName, strlen(buffer) + 1, buffer);
-	//cout << endl << "Day: ";
-	//in >> e.eventDay;
-	//cout << endl << "Month: ";
-	//in >> e.eventMonth;
-	//cout << endl << "Year: ";
-	//in >> e.eventYear;
-	//cout << endl << "Hour: ";
-	//in >> e.eventHour;
-	//cout << endl << "Minute: ";
-	//in >> e.eventMinute;
-	//cout << endl << "City: ";
-	//in >> e.eventCity;
-	//cout << endl << "Street: ";
-	//in >> e.eventStreet;
-	//cout << endl << "Number of street: ";
-	//in >> e.noStreet;
+	cout << endl << "Event name: ";
+	char buffer[100];
+	in >> buffer;
+	if (e.eventName != nullptr) {
+		delete[] e.eventName;
+		e.eventName = nullptr;
+	}
+	e.eventName = new char[strlen(buffer) + 1];
+	strcpy_s(e.eventName, strlen(buffer) + 1, buffer);
+	cout << endl << "Day: ";
+	in >> e.eventDay;
+	cout << endl << "Month: ";
+	in >> e.eventMonth;
+	cout << endl << "Year: ";
+	in >> e.eventYear;
+	cout << endl << "Hour: ";
+	in >> e.eventHour;
+	cout << endl << "Minute: ";
+	in >> e.eventMinute;
+	cout << endl << "City: ";
+	in >> e.eventCity;
+	cout << endl << "Street: ";
+	in >> e.eventStreet;
+	cout << endl << "Number of street: ";
+	in >> e.noStreet;
 }

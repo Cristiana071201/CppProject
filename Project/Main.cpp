@@ -62,5 +62,5 @@ int main()
 	Concert.setEventMinute(100);
 
 	Event Film;
-	cout << Film;
+	//cout << Film;
 }
