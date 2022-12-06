@@ -5,7 +5,7 @@ class Location
 {
 private:
 	//zones
-	bool VIPzone = true;
+	bool isVIP = true;
 	//number of rows
 	int noRows = 0;
 	//number of seats per row

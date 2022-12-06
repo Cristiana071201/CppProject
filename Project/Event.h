@@ -17,6 +17,19 @@ private:
 	int noStreet = 0;
 
 public:
+	Event()
+	{
+		eventName = nullptr;
+		eventDay = 00;
+		eventMonth = "unknown";
+		eventYear = 0000;
+		eventHour = 00;
+		eventMinute = 00;
+		eventCity = "unknown";
+		eventStreet = "unknown";
+		noStreet = 0;
+	}
+
 	Event(const char* eventName, int eventDay, string eventMonth, int eventYear, int eventHour, int eventMinute, string eventCity, string eventStreet, int noStreet)
 	{
 		if (eventName != nullptr)
@@ -133,7 +146,7 @@ public:
 			this->eventMinute = minute;
 		}
 		else
-			cout << endl << "Cannot change the minutes. Input should be only from 1 to 60.";
+			cout << endl << "Cannot change the minutes. Input should be only from 0 to 60.";
 	}
 	void setEventCity(string city)
 	{

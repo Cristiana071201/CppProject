@@ -60,4 +60,7 @@ int main()
 				cout << "Wrong event name. Check spelling or try searching for another event." << endl;
 
 	Concert.setEventMinute(100);
+
+	Event Film;
+	cout << Film;
 }
