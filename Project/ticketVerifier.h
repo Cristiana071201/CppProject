@@ -3,9 +3,10 @@ using namespace std;
 
 class Verify {
 private:
-	int uniqueId;
-	int row;
-	int seat;
+	const int uniqueId = 0;
+	int row = 0;
+	int seat = 0;
+	int* seatsPerRow = nullptr;
 	bool sold = false;
 public:
 

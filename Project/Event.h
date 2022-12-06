@@ -7,8 +7,8 @@ private:
 	char* eventName = nullptr;
 	//date
 	int eventDay = 1;
-	string eventMonth = "January";
-	int eventYear = 2001;
+	string eventMonth = " ";
+	int eventYear = 2022;
 	//time
 	int eventHour = 00;
 	int eventMinute = 00;
@@ -92,23 +92,48 @@ public:
 	}
 	void setEventDay(int day)
 	{
-		this->eventDay = day;
+		if (day < 1 && day > 30)
+		{
+			this->eventDay = day;
+		}
+		else
+			cout << endl << "Cannot change the day. Input should be only from 1 to 30.";
 	}
 	void setEventMonth(string month)
 	{
-		 this->eventMonth = month;
+		if (month == "January" || month == "February" || month == "March" || month == "April" || month == "May" || month == "June" || month == "July" || month == "August" || month == "September" || month == "October" || month == "November" || month == "December")
+		{
+			this->eventMonth = month;
+		}
+		else
+			cout << endl << "Cannot change the month. Input should respect 2 rules: capital first letter, full month name.";
 	}
 	void setEventYear(int year)
 	{
-		this->eventYear = year;
+		if (year < 2022 && year > 2025)
+		{
+			this->eventYear = year;
+		}
+		else
+			cout << endl << "Cannot change the year. Input should be only from 2022 to 2025.";
 	}
 	void setEventHour(int hour)
 	{
-		this->eventHour = hour;
+		if (hour < 0 && hour > 24)
+		{
+			this->eventHour = hour;
+		}
+		else
+			cout << endl << "Cannot change the hour. Input should be only from 0 to 24.";
 	}
 	void setEventMinute(int minute)
 	{
-		this->eventMinute = minute;
+		if (minute < 0 && minute > 60) 
+		{
+			this->eventMinute = minute;
+		}
+		else
+			cout << endl << "Cannot change the minutes. Input should be only from 1 to 60.";
 	}
 	void setEventCity(string city)
 	{
@@ -120,7 +145,12 @@ public:
 	}
 	void setNoStreet(int no)
 	{
-		this->noStreet = no;
+		if (no < 0 && no > 50)
+		{
+			this->noStreet = no;
+		}
+		else
+			cout << endl << "Cannot change the street number. Input should be only from 1 to 50.";
 	}
 
 	char* getEventName()

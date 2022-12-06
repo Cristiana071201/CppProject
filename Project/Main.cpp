@@ -59,5 +59,5 @@ int main()
 			else
 				cout << "Wrong event name. Check spelling or try searching for another event." << endl;
 
-
+	Concert.setEventMinute(100);
 }
