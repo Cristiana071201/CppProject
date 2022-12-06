@@ -63,4 +63,8 @@ int main()
 
 	Event Film;
 	//cout << Film;
+
+	Event Meci;
+	cin >> Meci;
+	cout << Meci;
 }

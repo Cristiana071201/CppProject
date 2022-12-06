@@ -232,20 +232,20 @@ void operator>>(istream& in, Event& e)
 	}
 	e.eventName = new char[strlen(buffer) + 1];
 	strcpy_s(e.eventName, strlen(buffer) + 1, buffer);
-	cout << endl << "Day: ";
+	cout << "Day: ";
 	in >> e.eventDay;
-	cout << endl << "Month: ";
+	cout <<  "Month: ";
 	in >> e.eventMonth;
-	cout << endl << "Year: ";
+	cout <<  "Year: ";
 	in >> e.eventYear;
-	cout << endl << "Hour: ";
+	cout <<  "Hour: ";
 	in >> e.eventHour;
-	cout << endl << "Minute: ";
+	cout <<  "Minute: ";
 	in >> e.eventMinute;
-	cout << endl << "City: ";
+	cout <<  "City: ";
 	in >> e.eventCity;
-	cout << endl << "Street: ";
+	cout <<  "Street: ";
 	in >> e.eventStreet;
-	cout << endl << "Number of street: ";
+	cout <<  "Number of street: ";
 	in >> e.noStreet;
 }

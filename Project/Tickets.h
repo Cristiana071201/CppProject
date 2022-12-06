@@ -17,7 +17,7 @@ private:
 	static int MAXIMUM_SEATS_NUMBER;
 	const int uniqueId;
 public:
-	Ticket(int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets, int uniqueId):uniqueId(uniqueId)
+	Ticket(int uniqueId, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets):uniqueId(uniqueId)
 	{
 		this->isVIP = false;
 		this->noRow = noRow;
@@ -91,8 +91,23 @@ public:
 		return this->noRow;
 	}
 
-	//friend void operator<<(ostream& out, Ticket t);
-	//friend void operator>>(istream& in, Ticket& t);
+	int getMaxRows()
+	{
+		return MAXIMUM_ROWS_NUMBER;
+	}
+
+	int getMaxSeats()
+	{
+		return MAXIMUM_SEATS_NUMBER;
+	}
+
+	int getTotalNoSeats()
+	{
+		return MAXIMUM_ROWS_NUMBER * MAXIMUM_SEATS_NUMBER;
+	}
+
+	friend void operator<<(ostream& out, Ticket t);
+	friend void operator>>(istream& in, Ticket& t);
 
 };
 
@@ -100,12 +115,12 @@ int Ticket::MINIMUM_TICKETS_NUMBER = 1;
 int Ticket::MAXIMUM_ROWS_NUMBER = 25;
 int Ticket::MAXIMUM_SEATS_NUMBER = 30;
 
-//void operator<<(ostream& out, Ticket t)
-//{
-//
-//}
-//
-//void operator>>(istream& in, Ticket& t)
-//{
-//
-//}
+void operator<<(ostream& out, Ticket t)
+{
+
+}
+
+void operator>>(istream& in, Ticket& t)
+{
+
+}
