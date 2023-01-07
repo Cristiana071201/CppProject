@@ -7,11 +7,6 @@ using namespace std;
 
 int main()
 {
-	//Ticket t1;
-	//cout << "The ticket's unique id is: " << t1.getUniqueId() << endl;
-	//int tickets[]{ 22, 31, 5 };
-	//Ticket t2( 1, 1, CHILD, tickets, 3, 12);
-	//cout << "The ticket's unique id is: " << t2.getUniqueId() << endl;
 
 	Event Concert("Concert", 7, "December", 2022, 23, 30, "Bucuresti", "Stefan cel Mare", 7);
 	Event Football("Football", 9, "March", 2023, 16, 30, "Bacau", "Strada Principala", 9);
@@ -67,4 +62,16 @@ int main()
 	Event Meci;
 	cin >> Meci;
 	cout << Meci;
+
+	Ticket t1;
+	cout << endl << "The ticket's unique id is: " << t1.getUniqueId() << endl;
+	//int tickets[]{ 22, 31, 5 };
+	//Ticket t2( 1, 1, CHILD, tickets, 3, 12);
+	//cout << "The ticket's unique id is: " << t2.getUniqueId() << endl;
+
+	int tickets[]{ 14, 15, 16 };
+	Ticket t5(1, 1, 1, ADULT, tickets, 3);
+
+	cin >> t5;
+	cout << t5;
 }

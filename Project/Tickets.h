@@ -17,6 +17,14 @@ private:
 	static int MAXIMUM_SEATS_NUMBER;
 	const int uniqueId;
 public:
+	Ticket():uniqueId(0)
+	{
+		isVIP = false;
+		noRow = 1;
+		noSeat = 1;
+		type = ADULT;
+	}
+
 	Ticket(int uniqueId, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets):uniqueId(uniqueId)
 	{
 		this->isVIP = false;
@@ -117,10 +125,17 @@ int Ticket::MAXIMUM_SEATS_NUMBER = 30;
 
 void operator<<(ostream& out, Ticket t)
 {
-
+	out << endl << "VIP Ticket: " << t.isVIP;
+	out << endl << "Row number: " << t.noRow;
+	out << endl << "Seat number: " << t.noSeat;
 }
 
 void operator>>(istream& in, Ticket& t)
 {
-
+	cout << "VIP Ticket: ";
+	in >> t.isVIP;
+	cout << "Row number: ";
+	in >> t.noRow;
+	cout << "Seat number: ";
+	in >> t.noSeat;
 }
