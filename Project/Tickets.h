@@ -89,6 +89,7 @@ public:
 		return uniqueID;
 	}
 
+
 	void markAsVIP()
 	{
 		isVIP = 0;
@@ -136,6 +137,7 @@ int Ticket::MAXIMUM_SEATS_NUMBER = 30;
 void operator<<(ostream& out, Ticket t)
 {
 	out << endl << "VIP Ticket: " << t.isVIP;
+	out << endl << "Ticket type: " << t.type;
 	out << endl << "Row number: " << t.noRow;
 	out << endl << "Seat number: " << t.noSeat;
 }
@@ -144,6 +146,18 @@ void operator>>(istream& in, Ticket& t)
 {
 	cout << "VIP Ticket: " << endl;
 	in >> t.isVIP;
+	cout << "Ticket type: " << endl;
+	string type;
+	in >> type;
+	if (type == "CHILD") t.type = CHILD;
+	else if (type == "TEENAGER") t.type = TEENAGER;
+	else if (type == "STUDENT") t.type = STUDENT;
+	else if (type == "ADULT") t.type = ADULT;
+	else if (type == "SENIOR") t.type = SENIOR;
+	else 
+	{
+		cout << "Invalid spectator type. Please enter a valid type." << endl;
+	}
 	cout << "Row number: " << endl;
 	in >> t.noRow;
 	cout << "Seat number: " << endl;

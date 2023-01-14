@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 
+enum ZoneType { VIP, NORMAL};
+
 class Location
 {
 private:
-	//zones
-	bool isVIP = true;
+	string locationName = " ";
+	ZoneType type = NORMAL;
 	//number of rows
 	int noRows = 0;
 	//number of seats per row
@@ -16,15 +18,16 @@ private:
 public:
 	Location()
 	{
-		isVIP = false;
+		locationName = "";
 		noRows = 10;
 		seatsPerRow = nullptr;
 		noSeatsPerRow = 10;
 	}
 
-	Location(bool isVIP, int noRows, int* seatsPerRow, int noSeatsPerRow)
+	Location(string locationName, ZoneType type, int noRows, int* seatsPerRow, int noSeatsPerRow)
 	{
-		this->isVIP = isVIP;
+		this->locationName = locationName;
+		this->type = type;
 		this->noRows = noRows;
 		if (seatsPerRow != nullptr && noSeatsPerRow > 0)
 		{
@@ -44,7 +47,8 @@ public:
 
 	Location(const Location& l)
 	{
-		this->isVIP = l.isVIP;
+		this->locationName = l.locationName;
+		this->type = l.type;
 		this->noRows = l.noRows;
 		if (l.seatsPerRow != nullptr && l.noSeatsPerRow > 0)
 		{
@@ -72,7 +76,7 @@ public:
 		if (this != &l)
 		{
 			delete[] seatsPerRow;
-			this->isVIP = l.isVIP;
+			this->locationName = l.locationName;
 			this->noRows = l.noRows;
 			if (l.seatsPerRow != nullptr && l.noSeatsPerRow > 0)
 			{
@@ -92,13 +96,6 @@ public:
 		return *this;
 	}
 
-	void setVIP(bool isVIP)
-	{
-		if (isVIP != true)
-		{
-			this->isVIP = true;
-		}
-	}
 	void setNoRows(int rows)
 	{
 		if (rows < 1 && rows > 100)
@@ -128,24 +125,19 @@ int Location::MAXIMUM_SEATS_NUMBER = 300;
 
 void operator<<(ostream& out, Location l)
 {
-	if (l.isVIP = false)
-	{
-		out << endl << "The zone is not VIP.";
-	}
-	else
-	{
-		out << endl << "The zone is VIP.";
-	}
+	out << endl << "Location name: " << l.locationName;
 	out << endl << "Rows: " << l.noRows;
 	out << endl << "Seats per row: " << l.noSeatsPerRow << endl;
 }
 
 void operator>>(istream& in, Location& l)
 {
-	cout << "Is the zone VIP?";
-	in >> l.isVIP;
+	cout << "Location name: ";
+	in >> l.locationName;
 	cout << "Number of rows: ";
 	in >> l.noRows;
 	cout << "Number of seats per row: ";
 	in >> l.noSeatsPerRow;
+	cout << "Zone type: ";
+	in >> l.locationName;
 }

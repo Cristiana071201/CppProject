@@ -13,10 +13,18 @@ int main()
 	Event Football("Football", 9, "March", 2023, 16, 30, "Bacau", "Strada Principala", 9);
 	Event Movie("Movie", 12, "November", 2022, 20, 30, "Bucuresti", "Nicolae Balcescu", 2);
 
+	//creating locations (string locationName, ZoneType type, int noRows, int* seatsPerRow, int noSeatsPerRow)
+	int seatsPerRowConcert[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	Location ConcertHall("Concert Hall", VIP, 50, seatsPerRowConcert, 10);
+	int seatsPerRowFootball[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+	Location Stadium("Stadium", NORMAL, 50, seatsPerRowFootball, 20);
+	int seatsPerRowMovie[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	Location Theater("Theater", NORMAL, 50, seatsPerRowMovie, 10);
+
 	Verify verifier;
 	Ticket ticket;
 	while (true) {
-		cout << "Ticket Management Application" << endl;
+		cout << "\033[1m" << "Ticket Management Application" << "\033[0m" << endl;
 		cout << "1. Informations about the location" << endl;
 		cout << "2. Informations about the event" << endl;
 		cout << "3. Generate tickets" << endl;
@@ -31,17 +39,17 @@ int main()
 			string location;
 			cout << "Enter name of the location: " << endl;
 			cin >> location;
-			if (location == "Concert" || location == "concert")
+			if (location == "Hall" || location == "hall")
 			{
-				cout << Concert;
+				cout << ConcertHall;
 			}
-			else if (location == "Football" || location == "football")
+			else if (location == "Stadium" || location == "stadium")
 			{
-				cout << Football;
+				cout << Stadium;
 			}
-			else if (location == "Movie" || location == "movie")
+			else if (location == "Theater" || location == "theater")
 			{
-				cout << Movie;
+				cout << Theater;
 			}
 			else
 				cout << "Wrong location name. Check spelling or try searching for another location." << endl;
