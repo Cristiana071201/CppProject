@@ -52,7 +52,7 @@ int main()
 				cout << Theater;
 			}
 			else
-				cout << "Wrong location name. Check spelling or try searching for another location." << endl;
+				cout << "Wrong location name. Check spelling or try searching for another location." << endl << endl;
 		}
 		else if (option == 2)
 		{
@@ -72,7 +72,7 @@ int main()
 				cout << Movie;
 			}
 			else
-				cout << "Wrong event name. Check spelling or try searching for another event." << endl;
+				cout << "Wrong event name. Check spelling or try searching for another event." << endl << endl;
 		}
 		else if (option == 3)
 		{
@@ -86,11 +86,11 @@ int main()
 			cin >> ticketID;
 			if (verifier.verifyTicket(ticketID)) 
 			{
-				cout << "Ticket is valid." << endl;
+				cout << "Ticket is valid." << endl << endl;
 			}
 			else
 			{
-				cout << "Ticket is not valid." << endl;
+				cout << "Ticket is not valid." << endl << endl;
 			}
 		}
 		else if (option == 5)
@@ -99,7 +99,7 @@ int main()
 		}
 		else 
 		{
-			cout << "Invalid option. Please enter a valid one." << endl;
+			cout << "Invalid option. Please enter a valid one." << endl << endl;
 		}
 	}
 

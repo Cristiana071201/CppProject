@@ -128,6 +128,7 @@ void operator<<(ostream& out, Location l)
 	out << endl << "Location name: " << l.locationName;
 	out << endl << "Rows: " << l.noRows;
 	out << endl << "Seats per row: " << l.noSeatsPerRow << endl;
+	out << "Total number of seats: " << l.noRows * l.noSeatsPerRow << endl << endl;
 }
 
 void operator>>(istream& in, Location& l)
@@ -138,6 +139,4 @@ void operator>>(istream& in, Location& l)
 	in >> l.noRows;
 	cout << "Number of seats per row: ";
 	in >> l.noSeatsPerRow;
-	cout << "Zone type: ";
-	in >> l.locationName;
 }
