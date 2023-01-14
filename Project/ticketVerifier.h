@@ -2,9 +2,17 @@
 using namespace std;
 
 class Verify {
-private:
-	bool sold = false;
-	Ticket ticket;
 public:
+    int lastGeneratedID;
 
+    int generateLastID(int uniqueID)
+    {
+        lastGeneratedID = uniqueID;
+        return uniqueID;
+    }
+
+    bool verifyTicket(int uniqueID)
+    {
+        return uniqueID == lastGeneratedID;
+    }
 };

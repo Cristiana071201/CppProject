@@ -6,6 +6,7 @@ enum SpectatorType { CHILD, TEENAGER, STUDENT, ADULT, SENIOR};
 
 class Ticket {
 private:
+	int uniqueID;
 	bool isVIP = false;
 	int noRow = 0;
 	int noSeat = 0;
@@ -15,18 +16,19 @@ private:
 	static int MINIMUM_TICKETS_NUMBER;
 	static int MAXIMUM_ROWS_NUMBER;
 	static int MAXIMUM_SEATS_NUMBER;
-	const int uniqueId;
 public:
-	Ticket():uniqueId(0)
+	Ticket()
 	{
+		uniqueID = 0;
 		isVIP = false;
 		noRow = 1;
 		noSeat = 1;
 		type = ADULT;
 	}
 
-	Ticket(int uniqueId, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets):uniqueId(uniqueId)
+	Ticket(int uniqueId, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets)
 	{
+		this->uniqueID = generateUniqueID();
 		this->isVIP = false;
 		this->noRow = noRow;
 		this->noSeat = noSeat;
@@ -47,8 +49,9 @@ public:
 		}
 	}
 
-	Ticket(const Ticket& t) :uniqueId(t.uniqueId)
+	Ticket(const Ticket& t)
 	{
+		this->uniqueID = t.uniqueID;
 		this->isVIP = t.isVIP;
 		this->noRow = t.noRow;
 		this->noSeat = t.noSeat;
@@ -74,9 +77,16 @@ public:
 		delete[] tickets;
 	}
 
-	int getUniqueId()
+	int generateUniqueID() //for this I have used information from https://cplusplus.com/reference/cstdlib/rand/
 	{
-		return uniqueId;
+		srand(time(nullptr));
+		int uniqueID = rand() % 1000;
+		return uniqueID;
+	}
+
+	int getUniqueID()
+	{
+		return uniqueID;
 	}
 
 	void markAsVIP()
