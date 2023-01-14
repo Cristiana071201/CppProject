@@ -142,10 +142,10 @@ void operator<<(ostream& out, Ticket t)
 
 void operator>>(istream& in, Ticket& t)
 {
-	cout << "VIP Ticket: ";
+	cout << "VIP Ticket: " << endl;
 	in >> t.isVIP;
-	cout << "Row number: ";
+	cout << "Row number: " << endl;
 	in >> t.noRow;
-	cout << "Seat number: ";
+	cout << "Seat number: " << endl;
 	in >> t.noSeat;
 }

@@ -28,7 +28,23 @@ int main()
 
 		if (option == 1)
 		{
-			//code to enter event location
+			string location;
+			cout << "Enter name of the location: " << endl;
+			cin >> location;
+			if (location == "Concert" || location == "concert")
+			{
+				cout << Concert;
+			}
+			else if (location == "Football" || location == "football")
+			{
+				cout << Football;
+			}
+			else if (location == "Movie" || location == "movie")
+			{
+				cout << Movie;
+			}
+			else
+				cout << "Wrong location name. Check spelling or try searching for another location." << endl;
 		}
 		else if (option == 2)
 		{
@@ -49,7 +65,6 @@ int main()
 			}
 			else
 				cout << "Wrong event name. Check spelling or try searching for another event." << endl;
-
 		}
 		else if (option == 3)
 		{
