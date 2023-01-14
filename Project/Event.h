@@ -218,7 +218,7 @@ void operator<<(ostream& out, Event e)
 	}
 	out << endl << "Date: " << e.eventDay << "-" << e.eventMonth << "-" << e.eventYear;
 	out << endl << "Hour: " << e.eventHour << ":" << e.eventMinute;
-	out << endl << "Address: " << e.eventCity << " street " << e.eventStreet << " number " << e.noStreet;
+	out << endl << "Address: " << e.eventCity << " street " << e.eventStreet << " number " << e.noStreet << endl;
 }
 
 void operator>>(istream& in, Event& e) 

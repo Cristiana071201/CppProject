@@ -26,7 +26,7 @@ public:
 		type = ADULT;
 	}
 
-	Ticket(int uniqueId, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets)
+	Ticket(int uniqueID, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets)
 	{
 		this->uniqueID = generateUniqueID();
 		this->isVIP = false;
