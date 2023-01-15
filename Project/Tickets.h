@@ -163,3 +163,13 @@ void operator>>(istream& in, Ticket& t)
 	cout << "Seat number: " << endl;
 	in >> t.noSeat;
 }
+
+class VIPTicket : public Ticket {
+private:
+	string VIP_service;
+public:
+	string getVIPService()
+	{
+		return VIP_service;
+	}
+};
