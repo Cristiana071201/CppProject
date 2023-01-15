@@ -96,6 +96,34 @@ public:
 		return *this;
 	}
 
+	Location operator+(const Location& l) //new location object by adding the number of rows and the number of seats per row of the two location objects
+	{
+		int newNoRows = noRows + l.noRows;
+		int* newSeatsPerRow = new int[newNoRows];
+		for (int i = 0; i < noRows; i++) {
+			newSeatsPerRow[i] = seatsPerRow[i];
+		}
+		for (int i = noRows; i < newNoRows; i++) {
+			newSeatsPerRow[i] = l.seatsPerRow[i - noRows];
+		}
+		return Location(locationName + "-" + l.locationName, type, newNoRows, newSeatsPerRow, noSeatsPerRow + l.noSeatsPerRow);
+	}
+
+	Location operator-(const Location& l) //new location object with number of rows and number of seats per row that are not common between the two location objects
+	{
+		int newNoRows = noRows - l.noRows;
+		int* newSeatsPerRow = new int[newNoRows];
+		int newNoSeatsPerRow = noSeatsPerRow - l.noSeatsPerRow;
+		int j = 0;
+		for (int i = 0; i < noRows; i++) {
+			if (seatsPerRow[i] != l.seatsPerRow[i]) {
+				newSeatsPerRow[j] = seatsPerRow[i];
+				j++;
+			}
+		}
+		return Location(locationName + "-" + l.locationName, type, newNoRows, newSeatsPerRow, newNoSeatsPerRow);
+	}
+
 	void setNoRows(int rows)
 	{
 		if (rows < 1 && rows > 100)

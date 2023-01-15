@@ -6,7 +6,8 @@ enum SpectatorType { CHILD, TEENAGER, STUDENT, ADULT, SENIOR};
 
 class Ticket {
 private:
-	int uniqueID;
+	int uniqueID = 0;
+	int price = 0;
 	bool isVIP = false;
 	int noRow = 0;
 	int noSeat = 0;
@@ -26,10 +27,11 @@ public:
 		type = ADULT;
 	}
 
-	Ticket(int uniqueID, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets)
+	Ticket(int uniqueID, int price, int noRow, int noSeat, SpectatorType type, int* tickets, int noTickets)
 	{
 		this->uniqueID = generateUniqueID();
 		this->isVIP = false;
+		this->price = price;
 		this->noRow = noRow;
 		this->noSeat = noSeat;
 		this->type = type;
@@ -53,6 +55,7 @@ public:
 	{
 		this->uniqueID = t.uniqueID;
 		this->isVIP = t.isVIP;
+		this->price = t.price;
 		this->noRow = t.noRow;
 		this->noSeat = t.noSeat;
 		this->type = t.type;
@@ -77,6 +80,11 @@ public:
 		delete[] tickets;
 	}
 
+	bool getIsVIP() //bool vipStatus = ticket.getIsVIP();
+	{
+		return isVIP;
+	}
+
 	int generateUniqueID() //for this I have used information from https://cplusplus.com/reference/cstdlib/rand/
 	{
 		srand(time(nullptr));
@@ -89,10 +97,19 @@ public:
 		return uniqueID;
 	}
 
-
-	void markAsVIP()
+	void setIsVIP(bool vip) //ticket.setIsVIP(true);
 	{
-		isVIP = 0;
+		this->isVIP = vip;
+	}
+
+	int getPrice()
+	{
+		return this->price;
+	}
+
+	void setPrice(int price)
+	{
+		this->price = price;
 	}
 
 	void setNoRow(int row)
