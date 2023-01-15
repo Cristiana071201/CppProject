@@ -204,6 +204,23 @@ public:
 		return this->noStreet;
 	}
 
+	bool operator==(const Event& l)	//returns true if all the fields of two events are equal
+	{
+		return strcmp(eventName, l.eventName) == 0 && eventDay == l.eventDay && eventMonth == l.eventMonth && eventYear == l.eventYear && eventHour == l.eventHour && eventMinute == l.eventMinute && eventCity == l.eventCity && eventStreet == l.eventStreet && noStreet == l.noStreet;
+	}
+
+	int operator[](const string& fieldName)
+	{
+		if (fieldName == "eventDay") return eventDay;
+		if (fieldName == "eventYear") return eventYear;
+		if (fieldName == "eventHour") return eventHour;
+		if (fieldName == "eventMinute") return eventMinute;
+		if (fieldName == "noStreet") return noStreet;
+		else
+		{
+			cout << "Invalid field name." << endl;
+		}
+	}
 
 	friend void operator<<(ostream& out, Event e);
 	friend void operator>>(istream& in, Event& e);
