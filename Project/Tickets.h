@@ -142,6 +142,17 @@ public:
 		return MAXIMUM_ROWS_NUMBER * MAXIMUM_SEATS_NUMBER;
 	}
 
+	int operator*()
+	{
+		return price * noTickets;
+	}
+
+	bool operator>=(const Ticket& t) //compare the prices between objects
+	{
+		return price >= t.price;
+	}
+
+
 	friend void operator<<(ostream& out, Ticket t);
 	friend void operator>>(istream& in, Ticket& t);
 
