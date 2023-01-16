@@ -211,3 +211,31 @@ public:
 		return VIP_service;
 	}
 };
+
+
+class SpectatorTicket : public Ticket {
+private:
+	int price;
+	SpectatorType typeS;
+public:
+	SpectatorTicket(int price, SpectatorType typeS)
+	{
+		this->price = price;
+		this->typeS = typeS;
+	}
+
+	int getPrice() 
+	{
+		return price;
+	}
+
+	SpectatorType getType()
+	{ 
+		return this->typeS;
+	}
+
+	SpectatorType getSpectatorType()
+	{
+		return typeS;
+	}
+};
