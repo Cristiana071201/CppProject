@@ -5,6 +5,7 @@ using namespace std;
 #include "Location.h"
 #include "Tickets.h"
 #include "ticketVerifier.h"
+#include "Payment.h"
 
 int main()
 {
