@@ -102,14 +102,24 @@ public:
 		this->isVIP = vip;
 	}
 
-	int getPrice()
+	virtual int getPrice()
 	{
 		return this->price;
 	}
 
-	void setPrice(int price)
+	virtual SpectatorType getType() 
+	{ 
+		return this->type;
+	}
+
+	virtual void setPrice(int p)
 	{
-		this->price = price;
+		this->price = p;
+	}
+
+	virtual void setType(SpectatorType t) 
+	{ 
+		this->type = t; 
 	}
 
 	void setNoRow(int row)
